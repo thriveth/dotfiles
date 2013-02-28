@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory extendedglob
+setopt appendhistory #extendedglob
 unsetopt autocd nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -28,7 +28,16 @@ antigen-bundle command-not-found
 antigen-bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen-theme bira
+#antigen-theme fox
+#antigen-theme bira
 
 # Tell antigen that you're done.
 antigen-apply
+
+source ~/.zsh/zsh-git-prompt/zshrc.sh
+source ~/.zsh/MyBira.zsh-theme
+
+COMPLETION_WAITING_DOTS="true"
+
+fortune | cowsay
+echo 'vVv.|/vvv\\vVv||vvvv'

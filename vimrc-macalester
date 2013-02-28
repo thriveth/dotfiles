@@ -1,40 +1,12 @@
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
-Bundle 'Tagbar'
-Bundle 'Gundo'
-Bundle 'minibufexpl.vim'
-Bundle 'surround.vim'
-Bundle 'unimpaired.vim'
-Bundle 'molokai'
-Bundle 'UltiSnips'
-
-" Done with the Vundle'ing:
-filetype plugin indent on
-
-" And now to all of my old stuff:
 set number          "Turning line numbers on
-set lines=50 columns=90
+set lines=65 columns=90
 set hidden          "No need to save buffers before opening a new one.
 set ignorecase
 set smartcase       "Ignore case in search when term all lower case, else not.
 set gdefault        " Substitution everywhere in a line!
 set nobackup        "Don't save backup files. We have git nowadays.
 set noswapfile      "Don't save swap files (Do I want this?)
-set guioptions-=T   "By default hide toolbar in gvim: less clutter, more space.
+"set guioptions-=T   "By default hide toolbar in gvim: less clutter, more space.
 set guioptions-=r   "By default hide right scrollbar in gvim
 set guioptions-=L   "By default hide left scrollbar in gvim
 set autoindent      "Self explanatory
@@ -43,8 +15,8 @@ set textwidth=80
 set hlsearch        "Highlight search matches
 set incsearch
 set mouse=a         "Better mouse interaction in both GUI and terminal
-set guifont=DejaVuSansMono\ 9 
 "set guifont=DejaVuSansMonoForPowerline:h12 
+set guifont=DejaVuSansMono:h12 
 filetype plugin on      "Smart filetype recognition etc.
 filetype indent on
 filetype plugin indent on	
@@ -55,6 +27,8 @@ set completeopt+=longest
 set scrolloff=6  "Show 10 lines above/below cursor except at beg/end of files
 set showtabline=1
 set encoding=utf-8
+
+let g:pymode_lint=0  " Disable PyLint in pymode. Using flake8()
 
 """============================================================================
 "    DISABLING ARROW KEYS IN VIM, GODSPEED!
@@ -74,14 +48,22 @@ vnoremap  <Down>   <NOP>
 vnoremap  <Left>   <NOP>
 vnoremap  <Right>  <NOP>
 
-""""============================================================================
-""     Rope completion in Vim 
-""     Disable to begin with so I can tell the difference.
-""""============================================================================
-"let pymode_rope_vim_completion = 1
-"let pymode_rope_extended_complete = 1
-"let g:pymode_rope_autoimport_modules = ["pandas.*","matplotlib.pyplot","scipy.*", "os.*"]
-""imap <C-Space> <C-R>=RopeCodeAssistInsertMode()<CR>
+"""============================================================================
+"Use Pathogen to manpage plugins.
+"""============================================================================
+filetype off
+call pathogen#infect()   
+call pathogen#helptags()
+filetype plugin indent on
+syntax on
+
+"""============================================================================
+"     Rope completion in Vim  
+"""============================================================================
+let pymode_rope_vim_completion = 1
+let pymode_rope_extended_complete = 1
+let g:pymode_rope_autoimport_modules = ["pandas.*","matplotlib.pyplot","scipy.*", "os.*"]
+"imap <C-Space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 """============================================================================
 " Option for persistent undo, new to Vim 7.3
@@ -92,6 +74,35 @@ set undolevels=1000
 set undoreload=10000
 
 """============================================================================
+"Set options for Python files:
+"""============================================================================
+"au FileType python set omnifunc=pythoncomplete#Complete
+au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+"au FileType python compiler pylint "Autoenable pylint
+"let g:pylint_onwrite = 1   "Don't call pylint at every write
+"let g:pylint_signs = 0     "Markers for lines with python errors
+"let g:pymode_syntax = 0
+
+"""============================================================================
+" Options for MiniBufExplorer
+"""============================================================================
+let g:miniBufExplMapWindowNavArrows = 1
+
+"""============================================================================
+" Options for vim-powerline:
+"""============================================================================
+"Using the new python-based version, simply named Powerline:
+python from powerline.bindings.vim import source_plugin; source_plugin()
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+"let g:Powerline_theme = 'default'
+
+
+" If opening gVim with no file, view NERDTree
+"autocmd VimEnter * if !argc() | NERDTree | endif
+
+"
+"""============================================================================
 """ TagBar options:
 """============================================================================
 " Open Tagbar, return cursor to main window
@@ -101,6 +112,26 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 let g:tagbar_width = 35
 let g:tagbar_expand = 1  "Expand the window to accomodate tagbar
 let g:tagbar_foldlevel = 0  "Start tagbar with folds collapsed
+
+"""============================================================================
+" Options for autocomplete
+"""============================================================================
+" Disabled due to possible clash with python-mode
+"let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabLongestEnhanced       = 'longest'
+"set completeopt=menuone,longest,preview
+
+"""============================================================================
+" Options for indent guides
+"""============================================================================
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size  = 1
+" But actually I don't like them...
+
+"""============================================================================
+" Options for snipMate:
+"""============================================================================
+let g:snips_author = 'T. E. Rivera-Thorsen'
 
 """============================================================================
 " Option for (La)TeX plugin 
@@ -175,5 +206,25 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+nmap <leader>d :b#<bar>bd#<CR>
+" Map TeskList plugin:
+"map <leader>tl <Plug>TaskList
+
+"colorscheme xoria256-pluk
+"colorscheme molokai
 colorscheme Twilight
+"let g:molokai_original = 1  "Set to 1 for slightly more brownish bg
+":highlight LineNr ctermbg=Black     ctermfg=DarkGray
+":highlight Folded ctermbg=Black     ctermfg=DarkGray
+":highlight LineNr guibg=#222222     guifg=DarkGray
+":highlight Folded guibg=#222222     guifg=DarkGray
+"set modelines 
+
+"These two: is there a better way?
+set foldmethod=indent
+set foldlevel=99
+
+"Setting default size of window, should be at end of file.
+"set lines=65 columns=95 
 set colorcolumn=80 "Marker for 80th column
+"set TagbarOpen
