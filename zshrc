@@ -23,6 +23,8 @@ antigen-bundle heroku
 antigen-bundle pip
 antigen-bundle lein
 antigen-bundle command-not-found
+antigen-bundle lol
+antigen-bundle python
 
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
