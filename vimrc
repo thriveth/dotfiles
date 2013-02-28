@@ -22,6 +22,7 @@ Bundle 'unimpaired.vim'
 Bundle 'molokai'
 Bundle 'UltiSnips'
 Bundle 'vim-pandoc'
+Bundle 'Solarized'
 
 " Done with the Vundle'ing:
 filetype plugin indent on
