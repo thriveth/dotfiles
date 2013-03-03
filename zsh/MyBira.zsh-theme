@@ -15,13 +15,15 @@ fi
 #local git_branch='$(git_prompt_info)%{$reset_color%}'
 local git_branch='%{$fg[yelllow]%}$(git_super_status)%{$reset_color%}'
 
-PROMPT="╭─${user_host} ${trunc_prompt} ${rvm_ruby}
-╰─%B$%b "
-RPS1="${return_code} ${git_branch}"
+PROMPT=" 
+╭─${user_host}  ${trunc_prompt} ${rvm_ruby}
+╰──┤%B$ %b" 
+#%B𝄆%𝄞b"
+RPS1="  ${return_code} ${git_branch}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%}›%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}+%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}✔%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[white]%}…%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[yellow]%}‹"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[yellow]%}›%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}+%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_bold[red]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}✔%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$terminfo[bold]$fg[white]%}…%{$reset_color%}"

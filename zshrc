@@ -42,4 +42,7 @@ source ~/.zsh/MyBira.zsh-theme
 COMPLETION_WAITING_DOTS="true"
 
 fortune | cowsay
-echo 'vVv.|/vvv\\vVv||vvvv'
+echo '              vVv.|/vvv\\vVv||vvvv'
+
+#PATH Variable:
+export PATH=~/Software/EPD/bin:~/Software/casapy/:$PATH

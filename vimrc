@@ -5,33 +5,47 @@ call vundle#rc()
 
  " let Vundle manage Vundle
  " required! 
- Bundle 'gmarik/vundle'
+Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"
 " original repos on github
+Bundle 'sgur/ctrlp-extensions'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'tomasr/molokai'
+Bundle 'ivanov/vim-ipython'
+" locally installed Bundles
+Bundle 'nerdtree-ack'
 Bundle 'Tagbar'
+Bundle 'delimitMate.vim'
 Bundle 'Gundo'
-Bundle 'ctrlp.vim'
+Bundle 'repeat.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'rainbow_parentheses.vim'
 Bundle 'SuperTab-continued.'
-Bundle 'minibufexpl.vim'
+Bundle 'YankRing.vim'
+Bundle 'ctrlp.vim'
+"Bundle 'minibufexpl.vim'
 Bundle 'surround.vim'
 Bundle 'unimpaired.vim'
-Bundle 'molokai'
+Bundle 'Python-mode-klen'
+Bundle 'vim-ipython'
 Bundle 'UltiSnips'
 Bundle 'vim-pandoc'
 Bundle 'Solarized'
+Bundle '/.local/lib/python2.7/site-packages/powerline/bindings/vim/'
 
 " Done with the Vundle'ing:
 filetype plugin indent on
 
 " And now to all of my old stuff:
+set encoding=utf-8
 set number          "Turning line numbers on
-set lines=50 columns=90
+set ruler
+set lines=50 columns=87
 set hidden          "No need to save buffers before opening a new one.
 set ignorecase
 set smartcase       "Ignore case in search when term all lower case, else not.
@@ -60,6 +74,13 @@ set scrolloff=6  "Show 10 lines above/below cursor except at beg/end of files
 set showtabline=1
 set encoding=utf-8
 
+"""============================================================================
+"     Pymode settings: 
+"""============================================================================
+let g:pymode_lint_write=0
+let g:pymode_lint_signs=0
+nnoremap <leader>plw :PyLintWindowToggle<CR>
+nnoremap <leader>plt :PyLintToggle<CR>
 """============================================================================
 "    DISABLING ARROW KEYS IN VIM, GODSPEED!
 """============================================================================
@@ -115,16 +136,29 @@ let g:Tex_CompileRule_pdf           = 'pdflatex --interaction=nonstopmode $*'
 let g:solarized_termcolors          = 256 "But I don't really use solarized...
 
 """============================================================================
+"     YankRing settings 
+"""============================================================================
+" let g:yankring_replace_n_pkey = '<m-p>'
+" let g:yankring_replace_n_nkey = '<m-n>'
+
+"""============================================================================
 "CtrlP: Fuzzy search in vim.
 """============================================================================
-let g:ctrlp_map                     = '<c-p>'
-let g:ctrlp_cmd                     = 'CtrlPBufTag'
-let g:ctrlp_extensions              = ['mixed', 'buffertag', 'line']
+let g:ctrlp_map                     = '<C-Space>'
+let g:ctrlp_cmd                     = 'CtrlPMixed'
+let g:ctrlp_extensions              = ['changes', 'buffertag', 'line']
 "let g:ctrlp_extensions              = ['tag', 'buffertag', 'quickfix',
 "			              \'dir', 'rtscript', 'undo',
 "				      \'line', 'changes', 'mixed',
 "				      \'bookmarkdir']
 
+"""============================================================================
+"     Settings for powerline (python-based) 
+"""============================================================================
+"python from powerline.bindings.vim import source_plugin; source_plugin()
+set rtp+=/home/thriveth/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set laststatus=2  " Always enable statusline.
+"set noshowmode  " disable the automatic '-- INSERT --' etc text.
 
 """============================================================================
 "  Misc. mappings:
@@ -143,9 +177,9 @@ nnoremap <leader>n :noh<CR>
 "Map key to toggle line numbers, tagbar, gundo  and NERDTree plugins:
 nnoremap <F2>   :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F5>   :GundoToggle<CR>
-nmap     <F6>   :MiniBufExplorer<CR>
-nmap     <S-F6> :TMiniBufExplorer<CR>
-nmap     <F8>   :TagbarToggle<CR>
+nmap     <S-F6>   :MiniBufExplorer<CR>
+nmap     <F6> <leader>mbt
+nmap     <F8>   :TagbarToggle<CR><C-w>=
 nmap     <F9>   :NERDTreeToggle<CR>
 
 " Toggle the list option:
@@ -172,6 +206,13 @@ nmap <D-Down> ]e
 " Bubble multiple lines
 vmap <D-Up> [egv
 vmap <D-Down> ]egv
+
+" Mapping for using YankRing
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC>:YRShow<cr>
+
+" Shortcut to open a vertical split and enter it.
+nnoremap <leader>w <C-w>v<C-w>l
 
 " Easy window navigation
 map <C-h> <C-w>h
