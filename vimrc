@@ -45,14 +45,14 @@ filetype plugin indent on
 set encoding=utf-8
 set number          "Turning line numbers on
 set ruler
-set lines=50 columns=87
+set lines=50 columns=84
 set hidden          "No need to save buffers before opening a new one.
 set ignorecase
 set smartcase       "Ignore case in search when term all lower case, else not.
 set gdefault        " Substitution everywhere in a line!
 set nobackup        "Don't save backup files. We have git nowadays.
 set noswapfile      "Don't save swap files (Do I want this?)
-set guioptions-=T   "By default hide toolbar in gvim: less clutter, more space.
+set guioptions-=T   "By default hide toolbar in gvim: less clutter, more space.       
 set guioptions-=r   "By default hide right scrollbar in gvim
 set guioptions-=L   "By default hide left scrollbar in gvim
 set autoindent      "Self explanatory
