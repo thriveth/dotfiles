@@ -9,7 +9,7 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/thriveth/.zshrc'
 
-autoload -Uz compinit
+autoload -U compinit
 compinit
 # End of lines added by compinstall
 
@@ -28,6 +28,8 @@ antigen-bundle python
 
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
+# History Substring Search must be loaded AFTER syntax highlighting.
+antigen-bundle history-substring-search
 
 # Load the theme.
 #antigen-theme fox

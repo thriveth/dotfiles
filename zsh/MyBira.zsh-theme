@@ -21,7 +21,7 @@ PROMPT="
 #%B𝄆%𝄞b"
 RPS1="  ${return_code} ${git_branch}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[yellow]%}‹"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[yellow]%}‹∓ "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[yellow]%}›%{$reset_color%}"
 #ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}+%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_bold[red]%}✗%{$reset_color%}"

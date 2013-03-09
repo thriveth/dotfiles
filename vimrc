@@ -16,7 +16,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tomasr/molokai'
-Bundle 'ivanov/vim-ipython'
+"Bundle 'ivanov/vim-ipython'
+Bundle 'kshenoy/vim-signature'
 " locally installed Bundles
 Bundle 'nerdtree-ack'
 Bundle 'Tagbar'
@@ -81,6 +82,7 @@ let g:pymode_lint_write=0
 let g:pymode_lint_signs=0
 nnoremap <leader>plw :PyLintWindowToggle<CR>
 nnoremap <leader>plt :PyLintToggle<CR>
+
 """============================================================================
 "    DISABLING ARROW KEYS IN VIM, GODSPEED!
 """============================================================================
@@ -170,6 +172,9 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Map <leader>ch to make comment-headline.
 nnoremap <leader>ch 3i#<ESC>76A=<ESC>yy1o#<ESC>p1k6A<Space><ESC>i
+nnoremap <leader>cq 3i"<ESC>76A=<ESC>yy1o"<ESC>p1k6A<Space><ESC>i
+nnoremap <leader>cp 3i%<ESC>76A=<ESC>yy1o%<ESC>p1k6A<Space><ESC>i
+
 " Map <leader>W to strip trailing whitespace (steve losh)
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Map <leader> N to clear search hightlighting.
@@ -177,8 +182,8 @@ nnoremap <leader>n :noh<CR>
 "Map key to toggle line numbers, tagbar, gundo  and NERDTree plugins:
 nnoremap <F2>   :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F5>   :GundoToggle<CR>
-nmap     <S-F6>   :MiniBufExplorer<CR>
-nmap     <F6> <leader>mbt
+nmap     <S-F6> :MiniBufExplorer<CR>
+nmap     <F6>   <leader>mbt
 nmap     <F8>   :TagbarToggle<CR><C-w>=
 nmap     <F9>   :NERDTreeToggle<CR>
 
@@ -186,13 +191,13 @@ nmap     <F9>   :NERDTreeToggle<CR>
 nnoremap <leader>l :set list! list?<cr>
 
 " Easily set and unset cursorline and cursorcolumn.
-map <leader>cc :set cursorcolumn!<CR>
-map <leader>cl :set cursorline!<CR>
+map <leader>sc :set cursorcolumn!<CR>
+map <leader>sl :set cursorline!<CR>
 
 " Remap Alt-k and Alt-j to move screen contents down and up while keeping the
 " cursor on the middle line:
-nnoremap <D-j> jzz
-nnoremap <D-k> kzz
+nnoremap <A-j> jzz
+nnoremap <A-k> kzz
 "
 " Map sort function to key:
 vnoremap <leader>s :sort<CR>
@@ -201,11 +206,11 @@ vnoremap < <gv
 vnoremap > >gv
 " Use unimpaired to "bubble" text up and down:
 " Bubble single lines
-nmap <D-Up> [e
-nmap <D-Down> ]e
+nmap <A-Up> [e
+nmap <A-Down> ]e
 " Bubble multiple lines
-vmap <D-Up> [egv
-vmap <D-Down> ]egv
+vmap <A-Up> [egv
+vmap <A-Down> ]egv
 
 " Mapping for using YankRing
 nnoremap <silent> <F3> :YRShow<cr>
