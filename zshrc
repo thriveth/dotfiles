@@ -40,6 +40,7 @@ antigen-apply
 
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 source ~/.zsh/MyBira.zsh-theme
+source ~/.zsh/keybindings.sh
 
 COMPLETION_WAITING_DOTS="true"
 

@@ -20,6 +20,7 @@ Bundle 'tomasr/molokai'
 Bundle 'kshenoy/vim-signature'
 " locally installed Bundles
 Bundle 'nerdtree-ack'
+Bundle 'TaskList'
 Bundle 'Tagbar'
 Bundle 'delimitMate.vim'
 Bundle 'Gundo'
