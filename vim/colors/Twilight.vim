@@ -27,7 +27,7 @@ hi PmenuSel ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#3c4043 gui=NONE
 hi Search ctermfg=233 ctermbg=107 cterm=NONE guifg=#ffe792 guibg=#505050 gui=NONE
 hi IncSearch ctermfg=NONE ctermbg=NONE cterm=underline guifg=#141414 guibg=#ffe792 gui=NONE
 hi Directory ctermfg=167 ctermbg=NONE cterm=NONE guifg=#cf6a4c guibg=NONE gui=NONE
-hi Folded ctermfg=59 ctermbg=233 cterm=NONE guibg=#1e1e1e guifg=#3b402b gui=NONE
+hi Folded ctermfg=59 ctermbg=233 cterm=NONE guibg=#000000 guifg=#3b402b gui=NONE
 
 hi Normal ctermfg=231 ctermbg=233 cterm=NONE guifg=#f8f8f8 guibg=#141414 gui=NONE
 hi Boolean ctermfg=167 ctermbg=NONE cterm=NONE guifg=#cf6a4c guibg=NONE gui=NONE

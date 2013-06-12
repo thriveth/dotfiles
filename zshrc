@@ -32,7 +32,7 @@ antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle history-substring-search
 
 # Load the theme.
-#antigen-theme fox
+antigen-theme fox
 #antigen-theme bira
 
 # Tell antigen that you're done.
@@ -48,4 +48,12 @@ fortune | cowsay
 echo '              vVv.|/vvv\\vVv||vvvv'
 
 #PATH Variable:
-export PATH=~/Software/EPD/bin:~/Software/casapy/:$PATH
+#Add CASA to path first:
+export PATH=~/Software/casapy/:$PATH
+# Aliases for setting either EPD, Anaconda or Canopy as python dist:
+alias epdsetup='export PATH=~/Software/EPD/bin:~/Software/casapy/:$PATH'
+#export PATH=~/Software/EPD/bin:~/Software/casapy/:$PATH
+alias anaconda='export PATH=~/anaconda/bin:$PATH'
+#export PATH=~/anaconda/bin:~/Software/casapy/:$PATH
+#alias canopysetup='export PATH=~/'
+alias canopysetup='source ~/Enthought/Canopy_64bit/User/bin/activate'

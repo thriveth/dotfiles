@@ -19,7 +19,8 @@ Bundle 'tomasr/molokai'
 "Bundle 'ivanov/vim-ipython'
 Bundle 'kshenoy/vim-signature'
 " locally installed Bundles
-Bundle 'nerdtree-ack'
+" Bundle 'nerdtree-ack'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'TaskList'
 Bundle 'Tagbar'
 Bundle 'delimitMate.vim'
@@ -30,7 +31,8 @@ Bundle 'rainbow_parentheses.vim'
 Bundle 'SuperTab-continued.'
 Bundle 'YankRing.vim'
 Bundle 'ctrlp.vim'
-"Bundle 'minibufexpl.vim'
+" Bundle 'minibufexpl.vim'
+" Bundle 'The-NERD-tree'
 Bundle 'surround.vim'
 Bundle 'unimpaired.vim'
 Bundle 'Python-mode-klen'
@@ -47,7 +49,7 @@ filetype plugin indent on
 set encoding=utf-8
 set number          "Turning line numbers on
 set ruler
-set lines=50 columns=84
+set lines=50 columns=80
 set hidden          "No need to save buffers before opening a new one.
 set ignorecase
 set smartcase       "Ignore case in search when term all lower case, else not.
@@ -119,16 +121,6 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-"""============================================================================
-""" TagBar options:
-"""============================================================================
-" Open Tagbar, return cursor to main window
-autocmd VimEnter * nested :call tagbar#autoopen(1)
-" Auto open tagbar if opening a supported file
-autocmd FileType * nested :call tagbar#autoopen(0)
-let g:tagbar_width = 35
-let g:tagbar_expand = 1  "Expand the window to accomodate tagbar
-let g:tagbar_foldlevel = 0  "Start tagbar with folds collapsed
 
 """============================================================================
 " Option for (La)TeX plugin 
@@ -228,3 +220,15 @@ map <C-l> <C-w>l
 
 colorscheme Twilight
 set colorcolumn=80 "Marker for 80th column
+set lines=50 columns=84
+
+"""============================================================================
+""" TagBar options. Must be last to not mess up window size:
+"""============================================================================
+" Open Tagbar, return cursor to main window
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+" Auto open tagbar if opening a supported file
+autocmd FileType * nested :call tagbar#autoopen(0)
+let g:tagbar_width = 35
+let g:tagbar_expand = 1  "Expand the window to accomodate tagbar
+let g:tagbar_foldlevel = 0  "Start tagbar with folds collapsed

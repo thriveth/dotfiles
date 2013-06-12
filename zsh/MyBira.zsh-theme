@@ -16,7 +16,7 @@ fi
 local git_branch='%{$fg[yelllow]%}$(git_super_status)%{$reset_color%}'
 
 PROMPT=" 
-╭─${user_host}  ${trunc_prompt} ${rvm_ruby}
+╭─${user_host} ${trunc_prompt} ${rvm_ruby}
 ╰──$B⦿ %b " 
 #%B𝄆%𝄞b"
 RPS1="  ${return_code} ${git_branch}"
