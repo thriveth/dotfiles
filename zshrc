@@ -39,6 +39,7 @@ antigen-theme fox
 antigen-apply
 
 source ~/.zsh/zsh-git-prompt/zshrc.sh
+source ~/.zsh/batt_stat/zshrc.sh
 source ~/.zsh/MyBira.zsh-theme
 source ~/.zsh/keybindings.sh
 

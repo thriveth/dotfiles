@@ -13,13 +13,27 @@ else
   fi
 fi
 #local git_branch='$(git_prompt_info)%{$reset_color%}'
+BAT_CHARGE=~/.zsh/losh_battery.py
 local git_branch='%{$fg[yelllow]%}$(git_super_status)%{$reset_color%}'
+# Call battery status script
+#export BAT_STAT='python ~/.zsh/losh_battery.py'
+function battery_charge {
+    echo `$BAT_CHARGE` 2>/dev/null
+   # echo  `~/.zsh/losh_battery.py` 2>/dev/null
+}
+
+local batt_stat='%{$fg_bold[blue]%}$(battery_charge)%{$reset_color%}'
 
 PROMPT=" 
 ╭─${user_host} ${trunc_prompt} ${rvm_ruby}
-╰──$B⦿ %b " 
+╰─(${batt_stat})───$B⦿ %b " 
+#RPROMPT="$(battery_charge) %b"
 #%B𝄆%𝄞b"
-RPS1="  ${return_code} ${git_branch}"
+RPS1="  ${return_code} ${git_branch}"#" $(battery_charge)"
+#echo ${git_branch}
+#echo $(git_super_status)
+#echo ${batt_stat}
+#echo $(battery_charge)
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[yellow]%}‹∓ "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[yellow]%}›%{$reset_color%}"

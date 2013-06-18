@@ -7,37 +7,37 @@
 	<entry name="title" mtime="1370906516" type="string">
 		<stringvalue>Terminal</stringvalue>
 	</entry>
-	<entry name="palette" mtime="1371037700" type="string">
+	<entry name="palette" mtime="1371507191" type="string">
 		<stringvalue>#000000000000:#DCDC32312F2F:#858599990000:#B5B589890000:#26268B8AD2D2:#6C6C7171C4C4:#2A29A1A19898:#D3D3D7D7CFCF:#2E2E34343636:#DCDC32312F2F:#691595540000:#C36993E80000:#26268B8AD2D2:#5F5F5F5FAFAF:#0000AFAFAFAF:#EEEEEEEEECEC</stringvalue>
 	</entry>
-	<entry name="background_color" mtime="1371037700" type="string">
+	<entry name="background_color" mtime="1371507191" type="string">
 		<stringvalue>#00002B2A3636</stringvalue>
 	</entry>
 	<entry name="allow_bold" mtime="1370906516" type="bool" value="true"/>
 	<entry name="scroll_on_keystroke" mtime="1370906516" type="bool" value="true"/>
-	<entry name="alternate_screen_scroll" mtime="1371037700" type="bool" value="true"/>
+	<entry name="alternate_screen_scroll" mtime="1371507191" type="bool" value="true"/>
 	<entry name="default_size_rows" mtime="1370906516" type="int" value="24"/>
-	<entry name="background_type" mtime="1371037700" type="string">
+	<entry name="background_type" mtime="1371507191" type="string">
 		<stringvalue>transparent</stringvalue>
 	</entry>
-	<entry name="title_mode" mtime="1371037700" type="string">
+	<entry name="title_mode" mtime="1371507191" type="string">
 		<stringvalue>after</stringvalue>
 	</entry>
 	<entry name="exit_action" mtime="1370906516" type="string">
 		<stringvalue>close</stringvalue>
 	</entry>
 	<entry name="silent_bell" mtime="1370906516" type="bool" value="false"/>
-	<entry name="bold_color" mtime="1371037700" type="string">
+	<entry name="bold_color" mtime="1371507191" type="string">
 		<stringvalue>#9393A1A1A1A1</stringvalue>
 	</entry>
 	<entry name="scroll_on_output" mtime="1370906516" type="bool" value="false"/>
-	<entry name="cursor_shape" mtime="1371037700" type="string">
+	<entry name="cursor_shape" mtime="1371507191" type="string">
 		<stringvalue>ibeam</stringvalue>
 	</entry>
 	<entry name="cursor_blink_mode" mtime="1370906516" type="string">
 		<stringvalue>system</stringvalue>
 	</entry>
-	<entry name="foreground_color" mtime="1371037700" type="string">
+	<entry name="foreground_color" mtime="1371507191" type="string">
 		<stringvalue>#838394949696</stringvalue>
 	</entry>
 	<entry name="default_size_columns" mtime="1370906516" type="int" value="80"/>
@@ -45,20 +45,20 @@
 		<stringvalue></stringvalue>
 	</entry>
 	<entry name="default_show_menubar" mtime="1370906516" type="bool" value="true"/>
-	<entry name="font" mtime="1371037700" type="string">
+	<entry name="font" mtime="1371507191" type="string">
 		<stringvalue>DejaVu Sans Mono 10</stringvalue>
 	</entry>
 	<entry name="delete_binding" mtime="1370906516" type="string">
 		<stringvalue>escape-sequence</stringvalue>
 	</entry>
-	<entry name="background_darkness" mtime="1371037700" type="float" value="0.97634398937225342"/>
+	<entry name="background_darkness" mtime="1371507191" type="float" value="0.97634398937225342"/>
 	<entry name="word_chars" mtime="1370906516" type="string">
 		<stringvalue>-A-Za-z0-9,./?%&amp;#:_=+@~</stringvalue>
 	</entry>
 	<entry name="login_shell" mtime="1370906516" type="bool" value="false"/>
-	<entry name="use_theme_colors" mtime="1371037700" type="bool" value="false"/>
+	<entry name="use_theme_colors" mtime="1371507191" type="bool" value="false"/>
 	<entry name="use_custom_default_size" mtime="1370906516" type="bool" value="false"/>
-	<entry name="visible_name" mtime="1371037700" type="string">
+	<entry name="visible_name" mtime="1371507191" type="string">
 		<stringvalue>Solarized Dark</stringvalue>
 	</entry>
 	<entry name="backspace_binding" mtime="1370906516" type="string">
@@ -66,11 +66,11 @@
 	</entry>
 	<entry name="use_custom_command" mtime="1370906516" type="bool" value="false"/>
 	<entry name="update_records" mtime="1370906516" type="bool" value="true"/>
-	<entry name="use_system_font" mtime="1371037700" type="bool" value="false"/>
+	<entry name="use_system_font" mtime="1371507191" type="bool" value="false"/>
 	<entry name="scrollback_lines" mtime="1370906516" type="int" value="512"/>
 	<entry name="scroll_background" mtime="1370906516" type="bool" value="true"/>
 	<entry name="scrollbar_position" mtime="1370906516" type="string">
 		<stringvalue>right</stringvalue>
 	</entry>
-	<entry name="bold_color_same_as_fg" mtime="1371037700" type="bool" value="false"/>
+	<entry name="bold_color_same_as_fg" mtime="1371507191" type="bool" value="false"/>
 </gconf>
