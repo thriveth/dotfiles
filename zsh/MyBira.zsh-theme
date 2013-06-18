@@ -29,7 +29,7 @@ PROMPT="
 ╰─(${batt_stat})───$B⦿ %b " 
 #RPROMPT="$(battery_charge) %b"
 #%B𝄆%𝄞b"
-RPS1="  ${return_code} ${git_branch}"#" $(battery_charge)"
+RPS1="  ${return_code} ${git_branch}" #" $(battery_charge)"
 #echo ${git_branch}
 #echo $(git_super_status)
 #echo ${batt_stat}
