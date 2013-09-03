@@ -16,8 +16,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sensible'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tomasr/molokai'
+Bundle 'sjl/badwolf'
+Bundle 'noahfrederick/Hemisu'
 "Bundle 'ivanov/vim-ipython'
 Bundle 'kshenoy/vim-signature'
+Bundle 'chriskempson/base16-vim'
 " locally installed Bundles
 " Bundle 'nerdtree-ack'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
@@ -168,6 +171,9 @@ nnoremap <leader>ch 3i#<ESC>76A=<ESC>yy1o#<ESC>p1k6A<Space><ESC>i
 nnoremap <leader>cq 3i"<ESC>76A=<ESC>yy1o"<ESC>p1k6A<Space><ESC>i
 nnoremap <leader>cp 3i%<ESC>76A=<ESC>yy1o%<ESC>p1k6A<Space><ESC>i
 
+" Set rainbow parentheses on/off conveniently.
+nnoremap <leader>rt :RainbowParenthesesToggle<CR>
+
 " Map <leader>W to strip trailing whitespace (steve losh)
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Map <leader> N to clear search hightlighting.
@@ -218,6 +224,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Easily cycle through buffers
+:nnoremap <C-Tab> :bnext<CR>
+:nnoremap <C-S-Tab> :bprevious<CR>
+
 colorscheme Twilight
 set colorcolumn=80 "Marker for 80th column
 set lines=50 columns=84
@@ -232,3 +242,5 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 let g:tagbar_width = 35
 let g:tagbar_expand = 1  "Expand the window to accomodate tagbar
 let g:tagbar_foldlevel = 0  "Start tagbar with folds collapsed
+
+set lines=40 columns=84

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="palette" mtime="1371507191" type="string">
+	<entry name="palette" mtime="1378201702" type="string">
 		<stringvalue>#000000000000:#DCDC32312F2F:#858599990000:#B5B589890000:#26268B8AD2D2:#6C6C7171C4C4:#2A29A1A19898:#D3D3D7D7CFCF:#2E2E34343636:#D7D700000000:#5F5F87870000:#AFAF87870000:#26268B8AD2D2:#5F5F5F5FAFAF:#0000AFAFAFAF:#EEEEEEEEECEC</stringvalue>
 	</entry>
 	<entry name="allow_bold" mtime="1370907314" type="bool" value="true"/>
 	<entry name="scroll_on_keystroke" mtime="1370907314" type="bool" value="true"/>
-	<entry name="cursor_shape" mtime="1371507191" type="string">
+	<entry name="cursor_shape" mtime="1378201702" type="string">
 		<stringvalue>underline</stringvalue>
 	</entry>
 	<entry name="scroll_on_output" mtime="1370907314" type="bool" value="false"/>
-	<entry name="bold_color" mtime="1371507191" type="string">
+	<entry name="bold_color" mtime="1378201702" type="string">
 		<stringvalue>#58586E6E7575</stringvalue>
 	</entry>
 	<entry name="custom_command" mtime="1370907314" type="string">
@@ -21,13 +21,13 @@
 	<entry name="background_image" mtime="1370907314" type="string">
 		<stringvalue></stringvalue>
 	</entry>
-	<entry name="foreground_color" mtime="1371507191" type="string">
+	<entry name="foreground_color" mtime="1378201702" type="string">
 		<stringvalue>#65657B7A8383</stringvalue>
 	</entry>
 	<entry name="exit_action" mtime="1370907314" type="string">
 		<stringvalue>close</stringvalue>
 	</entry>
-	<entry name="use_system_font" mtime="1371507191" type="bool" value="false"/>
+	<entry name="use_system_font" mtime="1378201702" type="bool" value="false"/>
 	<entry name="silent_bell" mtime="1370907314" type="bool" value="false"/>
 	<entry name="use_custom_command" mtime="1370907314" type="bool" value="false"/>
 	<entry name="scrollbar_position" mtime="1370907314" type="string">
@@ -41,36 +41,36 @@
 	</entry>
 	<entry name="scroll_background" mtime="1370907314" type="bool" value="true"/>
 	<entry name="use_custom_default_size" mtime="1370907314" type="bool" value="false"/>
-	<entry name="background_darkness" mtime="1371507191" type="float" value="0.96559101343154907"/>
+	<entry name="background_darkness" mtime="1378201702" type="float" value="0.96559101343154907"/>
 	<entry name="scrollback_unlimited" mtime="1370907314" type="bool" value="false"/>
-	<entry name="visible_name" mtime="1371507191" type="string">
+	<entry name="visible_name" mtime="1378201702" type="string">
 		<stringvalue>Solarized light</stringvalue>
 	</entry>
 	<entry name="delete_binding" mtime="1370907314" type="string">
 		<stringvalue>escape-sequence</stringvalue>
 	</entry>
-	<entry name="use_theme_colors" mtime="1371507191" type="bool" value="false"/>
+	<entry name="use_theme_colors" mtime="1378201702" type="bool" value="false"/>
 	<entry name="scrollback_lines" mtime="1370907314" type="int" value="512"/>
-	<entry name="font" mtime="1371507191" type="string">
+	<entry name="font" mtime="1378201702" type="string">
 		<stringvalue>DejaVu Sans Mono 10</stringvalue>
 	</entry>
 	<entry name="login_shell" mtime="1370907314" type="bool" value="false"/>
-	<entry name="alternate_screen_scroll" mtime="1371507191" type="bool" value="true"/>
+	<entry name="alternate_screen_scroll" mtime="1378201702" type="bool" value="true"/>
 	<entry name="default_size_columns" mtime="1370907314" type="int" value="80"/>
 	<entry name="default_size_rows" mtime="1370907314" type="int" value="24"/>
 	<entry name="update_records" mtime="1370907314" type="bool" value="true"/>
-	<entry name="background_type" mtime="1371507191" type="string">
+	<entry name="background_type" mtime="1378201702" type="string">
 		<stringvalue>transparent</stringvalue>
 	</entry>
 	<entry name="cursor_blink_mode" mtime="1370907314" type="string">
 		<stringvalue>system</stringvalue>
 	</entry>
 	<entry name="default_show_menubar" mtime="1370907314" type="bool" value="true"/>
-	<entry name="background_color" mtime="1371507191" type="string">
+	<entry name="background_color" mtime="1378201702" type="string">
 		<stringvalue>#FDFDF6F6E3E3</stringvalue>
 	</entry>
-	<entry name="title_mode" mtime="1371507191" type="string">
+	<entry name="title_mode" mtime="1378201702" type="string">
 		<stringvalue>after</stringvalue>
 	</entry>
-	<entry name="bold_color_same_as_fg" mtime="1371507191" type="bool" value="false"/>
+	<entry name="bold_color_same_as_fg" mtime="1378201702" type="bool" value="false"/>
 </gconf>

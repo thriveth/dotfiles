@@ -58,3 +58,5 @@ alias anaconda='export PATH=~/anaconda/bin:$PATH'
 #export PATH=~/anaconda/bin:~/Software/casapy/:$PATH
 #alias canopysetup='export PATH=~/'
 alias canopysetup='source ~/Enthought/Canopy_64bit/User/bin/activate'
+
+export PYTHONPATH=$PYTHONPATH:/home/thriveth/Software/
