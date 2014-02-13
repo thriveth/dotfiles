@@ -17,7 +17,7 @@ hi Visual ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#3c4043 gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#2b2b2b gui=NONE
 hi CursorColumn ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#2b2b2b gui=NONE
 hi ColorColumn ctermfg=NONE ctermbg=235 cterm=NONE guifg=NONE guibg=#2b2b2b gui=NONE
-hi LineNr ctermfg=245 ctermbg=235 cterm=NONE guifg=#868686 guibg=#2b2b2b gui=NONE
+hi LineNr ctermfg=245 ctermbg=235 cterm=NONE guifg=#2b2b2b guibg=#141414 gui=NONE
 hi VertSplit ctermfg=240 ctermbg=240 cterm=NONE guifg=#565656 guibg=#2b2b2b gui=NONE
 hi MatchParen ctermfg=179 ctermbg=NONE cterm=underline guifg=#cda869 guibg=NONE gui=underline
 hi StatusLine ctermfg=231 ctermbg=240 cterm=bold guifg=#f8f8f8 guibg=#565656 gui=bold
@@ -35,7 +35,7 @@ hi Character ctermfg=167 ctermbg=NONE cterm=NONE guifg=#cf6a4c guibg=NONE gui=NO
 hi Comment ctermfg=59 ctermbg=NONE cterm=NONE guifg=#5f5a60 guibg=NONE gui=italic
 hi Conditional ctermfg=179 ctermbg=NONE cterm=NONE guifg=#cda869 guibg=NONE gui=bold
 hi Constant ctermfg=167 ctermbg=NONE cterm=NONE guifg=#cf6a4c guibg=NONE gui=NONE
-hi Define ctermfg=179 ctermbg=NONE cterm=NONE guifg=#cda869 guibg=NONE gui=NONE
+hi Define ctermfg=179 ctermbg=NONE cterm=NONE guifg=#cda869 guibg=NONE gui=bold
 hi DiffAdd ctermfg=231 ctermbg=64 cterm=bold guifg=#f8f8f8 guibg=#427f09 gui=bold
 hi DiffDelete ctermfg=88 ctermbg=NONE cterm=NONE guifg=#870404 guibg=NONE gui=NONE
 hi DiffChange ctermfg=231 ctermbg=17 cterm=NONE guifg=#f8f8f8 guibg=#1a2f4e gui=NONE

@@ -15,7 +15,7 @@ compinit
 
 source /home/thriveth/Software/antigen.zsh
 # Load the oh-my-zsh's library.
-antigen-lib
+antigen-use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen-bundle git
@@ -50,7 +50,7 @@ echo '              vVv.|/vvv\\vVv||vvvv'
 
 #PATH Variable:
 #Add CASA to path first:
-export PATH=~/Software/casapy/:$PATH
+export PATH=~/Software/casapy/:~/Software/bin/:$PATH
 # Aliases for setting either EPD, Anaconda or Canopy as python dist:
 alias epdsetup='export PATH=~/Software/EPD/bin:~/Software/casapy/:$PATH'
 #export PATH=~/Software/EPD/bin:~/Software/casapy/:$PATH
@@ -58,5 +58,14 @@ alias anaconda='export PATH=~/anaconda/bin:$PATH'
 #export PATH=~/anaconda/bin:~/Software/casapy/:$PATH
 #alias canopysetup='export PATH=~/'
 alias canopysetup='source ~/Enthought/Canopy_64bit/User/bin/activate'
+# Pathsetup to include reflex and included pipelines:
+export PATH=/home/thriveth/Software/xsh-kit-2.3.0/install/bin/:$PATH
+# To call reflex:
+# alias reflex=/home/thriveth/Software/xsh-kit-2.3.0/install/bin/reflex
+# CABAL verion of pandoc:
+export PATH=/home/thriveth/.cabal/bin:$PATH:/home/thriveth/Software/Montage_v3.3/bin
+#  ESO Reflex path:
+export PATH=/home/thriveth/Software/Reflex/install/bin:$PATH
 
 export PYTHONPATH=$PYTHONPATH:/home/thriveth/Software/
+# alias reflex=/home/thriveth/Software/Reflex/install/bin/reflex

@@ -9,7 +9,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 " original repos on github
-Bundle 'sgur/ctrlp-extensions'
+"Bundle 'sgur/ctrlp-extensions'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-repeat'
@@ -18,13 +18,29 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tomasr/molokai'
 Bundle 'sjl/badwolf'
 Bundle 'noahfrederick/Hemisu'
-"Bundle 'ivanov/vim-ipython'
-Bundle 'kshenoy/vim-signature'
+Bundle 'bling/vim-airline'
+" Bundle 'vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
+" Bundle 'vim-pandoc/vim-pantondoc'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
+" Bundle 'vim-pandoc/vim-pandoc-after'
+Bundle 'lambdalisue/shareboard.vim'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'ajacksified/vim-colors-solarized-brown'
+
+"Bundle 'Valloric/YouCompleteMe'
+
+" Bundle 'UltiSnips'
+Bundle 'snipMate'
+Bundle 'jellybeans.vim'
+"Bundle 'kshenoy/vim-signature'
 Bundle 'chriskempson/base16-vim'
+Bundle 'davidhalter/jedi-vim'
+
 " locally installed Bundles
-" Bundle 'nerdtree-ack'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-Bundle 'TaskList'
+Bundle 'Align'
+Bundle 'Distinguished'
 Bundle 'Tagbar'
 Bundle 'delimitMate.vim'
 Bundle 'Gundo'
@@ -32,18 +48,12 @@ Bundle 'repeat.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'rainbow_parentheses.vim'
 Bundle 'SuperTab-continued.'
-Bundle 'YankRing.vim'
+Bundle 'mimicpak'
 Bundle 'ctrlp.vim'
-" Bundle 'minibufexpl.vim'
-" Bundle 'The-NERD-tree'
 Bundle 'surround.vim'
 Bundle 'unimpaired.vim'
 Bundle 'Python-mode-klen'
-Bundle 'vim-ipython'
-Bundle 'UltiSnips'
-Bundle 'vim-pandoc'
 Bundle 'Solarized'
-Bundle '/.local/lib/python2.7/site-packages/powerline/bindings/vim/'
 
 " Done with the Vundle'ing:
 filetype plugin indent on
@@ -60,15 +70,20 @@ set gdefault        " Substitution everywhere in a line!
 set nobackup        "Don't save backup files. We have git nowadays.
 set noswapfile      "Don't save swap files (Do I want this?)
 set guioptions-=T   "By default hide toolbar in gvim: less clutter, more space.       
+" set guioptions-=m   "By default hide toolbar in gvim: less clutter, more space.       
 set guioptions-=r   "By default hide right scrollbar in gvim
 set guioptions-=L   "By default hide left scrollbar in gvim
+
+set clipboard+=unnamedplus
 set autoindent      "Self explanatory
 set linebreak       "Break lines above 80 characters wide
 set textwidth=80
 set hlsearch        "Highlight search matches
 set incsearch
 set mouse=a         "Better mouse interaction in both GUI and terminal
-set guifont=DejaVuSansMono\ 9 
+set guifont=DejaVuSansMonoforPowerLine\ 9
+"set guifont=LiberationMonoForPowerline\ 10
+"set guifont=DejaVuSansMono\ 10
 "set guifont=DejaVuSansMonoForPowerline:h12 
 filetype plugin on      "Smart filetype recognition etc.
 filetype indent on
@@ -86,8 +101,15 @@ set encoding=utf-8
 """============================================================================
 let g:pymode_lint_write=0
 let g:pymode_lint_signs=0
-nnoremap <leader>plw :PyLintWindowToggle<CR>
-nnoremap <leader>plt :PyLintToggle<CR>
+let g:pymode_rope=0
+"nnoremap <leader>plw :PyLintWindowToggle<CR>
+"nnoremap <leader>plt :PyLintToggle<CR>
+"
+"""============================================================================
+"     Shareboard settings 
+"""============================================================================
+" Use WebTeX to render math on Shareboard:
+let g:shareboard_command="pandoc -Ss --toc --webtex -t html"
 
 """============================================================================
 "    DISABLING ARROW KEYS IN VIM, GODSPEED!
@@ -111,10 +133,16 @@ vnoremap  <Right>  <NOP>
 ""     Rope completion in Vim 
 ""     Disable to begin with so I can tell the difference.
 """"============================================================================
-"let pymode_rope_vim_completion = 1
-"let pymode_rope_extended_complete = 1
-"let g:pymode_rope_autoimport_modules = ["pandas.*","matplotlib.pyplot","scipy.*", "os.*"]
-""imap <C-Space> <C-R>=RopeCodeAssistInsertMode()<CR>
+let pymode_rope_vim_completion = 1
+let pymode_rope_extended_complete = 1
+let g:pymode_rope_autoimport_modules = ["pandas.*","matplotlib.pyplot","scipy.*", "os.*"]
+imap <M-Space> <C-R>=RopeCodeAssistInsertMode()<CR>
+"
+"""============================================================================
+"     DistractFree settings: 
+"""============================================================================
+let g:distractfree_width=80
+let g:distractfree_colorscheme='twilight'
 
 """============================================================================
 " Option for persistent undo, new to Vim 7.3
@@ -123,6 +151,16 @@ set undodir=./undo/
 set undofile
 set undolevels=1000
 set undoreload=10000
+
+"""============================================================================
+"      Markdown-Vim settings
+"""============================================================================
+let g:markdown_fenced_languages = ['html', 'python', 'fortran', 'sh', 'latex']
+"""============================================================================
+"     Pandoc MarkDown formatting options 
+"""============================================================================
+let g:pandoc_use_hard_wraps = 1
+let g:pandoc_auto_format = 0
 
 
 """============================================================================
@@ -138,13 +176,21 @@ let g:solarized_termcolors          = 256 "But I don't really use solarized...
 """============================================================================
 " let g:yankring_replace_n_pkey = '<m-p>'
 " let g:yankring_replace_n_nkey = '<m-n>'
+"""============================================================================
+"     vim-airline settings 
+"""============================================================================
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 
 """============================================================================
 "CtrlP: Fuzzy search in vim.
 """============================================================================
-let g:ctrlp_map                     = '<C-Space>'
+let g:ctrlp_map                     = '<C-P>'
 let g:ctrlp_cmd                     = 'CtrlPMixed'
-let g:ctrlp_extensions              = ['changes', 'buffertag', 'line']
+let g:ctrlp_extensions              = ['buffertag', 'line']
 "let g:ctrlp_extensions              = ['tag', 'buffertag', 'quickfix',
 "			              \'dir', 'rtscript', 'undo',
 "				      \'line', 'changes', 'mixed',
@@ -154,9 +200,18 @@ let g:ctrlp_extensions              = ['changes', 'buffertag', 'line']
 "     Settings for powerline (python-based) 
 """============================================================================
 "python from powerline.bindings.vim import source_plugin; source_plugin()
-set rtp+=/home/thriveth/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"set rtp+=/home/thriveth/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2  " Always enable statusline.
 "set noshowmode  " disable the automatic '-- INSERT --' etc text.
+"""============================================================================
+"     Jedi settings: 
+"""============================================================================
+"autocmd FileType python setlocal completeopt-=preview
+
+"""============================================================================
+"     SuperTab stuff 
+"""============================================================================
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 """============================================================================
 "  Misc. mappings:
@@ -171,6 +226,10 @@ nnoremap <leader>ch 3i#<ESC>76A=<ESC>yy1o#<ESC>p1k6A<Space><ESC>i
 nnoremap <leader>cq 3i"<ESC>76A=<ESC>yy1o"<ESC>p1k6A<Space><ESC>i
 nnoremap <leader>cp 3i%<ESC>76A=<ESC>yy1o%<ESC>p1k6A<Space><ESC>i
 
+" Use leader keyto [S]how / [D]elete [M]arks:
+nnoremap <leader>dm :delmark
+nnoremap <leader>sm :marks<CR>
+
 " Set rainbow parentheses on/off conveniently.
 nnoremap <leader>rt :RainbowParenthesesToggle<CR>
 
@@ -181,8 +240,9 @@ nnoremap <leader>n :noh<CR>
 "Map key to toggle line numbers, tagbar, gundo  and NERDTree plugins:
 nnoremap <F2>   :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F5>   :GundoToggle<CR>
-nmap     <S-F6> :MiniBufExplorer<CR>
-nmap     <F6>   <leader>mbt
+nmap     <S-F6> :MBEToggle<CR>
+nmap     <C-F6> :MBEToggleMRU<CR>
+nmap     <F6>   :MBEFocus<CR>
 nmap     <F8>   :TagbarToggle<CR><C-w>=
 nmap     <F9>   :NERDTreeToggle<CR>
 
@@ -192,6 +252,9 @@ nnoremap <leader>l :set list! list?<cr>
 " Easily set and unset cursorline and cursorcolumn.
 map <leader>sc :set cursorcolumn!<CR>
 map <leader>sl :set cursorline!<CR>
+
+" Sort marked block alphabetically and/or numerically.
+vnoremap <leader>s :sort<CR>
 
 " Remap Alt-k and Alt-j to move screen contents down and up while keeping the
 " cursor on the middle line:
@@ -228,9 +291,21 @@ map <C-l> <C-w>l
 :nnoremap <C-Tab> :bnext<CR>
 :nnoremap <C-S-Tab> :bprevious<CR>
 
-colorscheme Twilight
+"colorscheme Twilight
+"set background=dark
+"colorscheme solarized
+
+" colorscheme base16-railscasts
+colorscheme badwolf
+"colorscheme birdsofparadise
+hi Conceal ctermfg=26 guibg=None guifg=#0A9DFF gui='bold'
 set colorcolumn=80 "Marker for 80th column
+highlight colorcolumn ctermbg=233
 set lines=50 columns=84
+"""============================================================================
+"     Misc. Autocommands etc. 
+"""============================================================================
+autocmd! bufwritepost .vimrc source %
 
 """============================================================================
 """ TagBar options. Must be last to not mess up window size:
